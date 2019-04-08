@@ -9,6 +9,7 @@
         <tr>
             <th>ID</th>
             <th>Colours List</th>
+            <th> Number of Colours</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,10 @@
 
                     @decor.Colours
                 </td>
+                <td>
+                    @decor.GetNumberOfColours()
+                </td>
+
 
                 <td> <a asp-page="Update" asp-route-id="@decor.ID">Change</a> </td>
             </tr>

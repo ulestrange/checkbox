@@ -66,7 +66,13 @@ namespace checkboxes.Models
         public int GetNumberOfColours()
         {
 
-            //note will return 1 if there are no colours - need to fix.
+            if (Colours == "")
+            {
+                // return 0 if there are no colours stored.
+                return 0;
+            }
+
+            
             string[] coloursArray = Colours.Split(',');
 
             return coloursArray.Length;

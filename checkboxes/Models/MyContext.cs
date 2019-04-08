@@ -15,6 +15,5 @@ namespace checkboxes.Models
 
         public DbSet<Decor> Decors { get; set; }
 
-    {
     }
 }

@@ -1,12 +1,13 @@
-﻿@page
-@model IndexModel
+﻿@page "{id}"
+@model checkboxes.Pages.UpdateModel
 @{
-    ViewData["Title"] = "Home page";
 }
 
-<h2> Create the Colours</h2>
+<h2> Update the Colours</h2>
 
 <form method="post">
+
+    <input asp-for="Decor.ID" hidden>
 
     <input asp-for="Decor.IsBlueChecked">
     <label asp-for="Decor.IsBlueChecked"></label>

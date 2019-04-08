@@ -11,6 +11,7 @@
             <th>Red Picked</th>
             <th>Blue Picked</th>
             <th>Green Picked</th>
+            <th>Number of Colours</th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@
             <td>@decor.IsRedChecked</td>
             <td>@decor.IsBlueChecked</td>
             <td>@decor.IsGreenChecked</td>
+            <td>@decor.GetNumberOfColours()</td>
 
 
             <td> <a asp-page="Update" asp-route-id="@decor.ID">Change</a> </td>

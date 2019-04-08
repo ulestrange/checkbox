@@ -15,5 +15,27 @@ namespace checkboxes.Models
         public bool IsBlueChecked { get; set; }
 
         public bool IsGreenChecked { get; set; }
+
+        public int GetNumberOfColours ()
+        {
+
+            int count = 0;
+
+            if (IsRedChecked)
+            {
+                count++;
+            }
+            if (IsBlueChecked)
+            {
+                count++;
+            }
+            if (IsGreenChecked)
+            {
+                count++;
+            }
+
+            return count;
+
+        }
     }
 }

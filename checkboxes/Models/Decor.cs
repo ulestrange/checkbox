@@ -10,6 +10,10 @@ namespace checkboxes.Models
 
         public int ID { get; set; }
 
-       
+        public bool IsRedChecked { get; set; }
+
+        public bool IsBlueChecked { get; set; }
+
+        public bool IsGreenChecked { get; set; }
     }
 }

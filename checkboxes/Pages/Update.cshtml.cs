@@ -20,11 +20,16 @@ namespace checkboxes.Pages
             _db = db;
         }
 
-
+        #endregion
         [BindProperty]
         public Decor Decor { get; set; }
 
-        #endregion
+        [BindProperty]
+        public List<bool> ColoursPicked { get; set; } =
+        new List<bool> { false, false, false };
+
+        public List<string> ColourChoices { get; set; } =
+            new List<string> { "Red", "Blue", "Green" };
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
@@ -34,6 +39,9 @@ namespace checkboxes.Pages
             {
                 return NotFound();
             }
+
+            ColoursPicked = Decor.GenerateBooleanList(ColourChoices);
+
             return Page();
         }
 
@@ -43,6 +51,8 @@ namespace checkboxes.Pages
             {
                 return Page();
             }
+
+            Decor.GenerateColoursString(ColourChoices, ColoursPicked);
 
             _db.Attach(Decor).State = EntityState.Modified;
 
@@ -55,9 +65,9 @@ namespace checkboxes.Pages
                 throw new Exception($"Student {Decor.ID} not found!");
             }
 
-            
 
-           return RedirectToPage("/List");
+
+            return RedirectToPage("/List");
         }
     }
 }

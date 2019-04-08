@@ -8,24 +8,22 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Red Picked</th>
-            <th>Blue Picked</th>
-            <th>Green Picked</th>
+            <th>Colours List</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var decor in Model.Decors)
         {
             // list out each of the properties.
-        <tr>
-            <td>@decor.ID</td>
-            <td>@decor.IsRedChecked</td>
-            <td>@decor.IsBlueChecked</td>
-            <td>@decor.IsGreenChecked</td>
+            <tr>
+                <td>@decor.ID</td>
+                <td>
 
+                    @decor.Colours
+                </td>
 
-            <td> <a asp-page="Update" asp-route-id="@decor.ID">Change</a> </td>
-        </tr>
+                <td> <a asp-page="Update" asp-route-id="@decor.ID">Change</a> </td>
+            </tr>
         }
     </tbody>
 </table>
